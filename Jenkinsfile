@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             agent {
                 kubernetes {
-                    inheritFrom 'agent-template'
+                    inheritFrom 'golang'
                 }
             }
             steps {
@@ -28,7 +28,7 @@ pipeline {
         stage('Test') {
             agent {
                 kubernetes {
-                    inheritFrom 'agent-template'
+                    inheritFrom 'golang'
                 }
             }
             steps {
@@ -48,7 +48,7 @@ pipeline {
         stage('Publish') {
             agent {
                 kubernetes {
-                    inheritFrom 'agent-template'
+                    inheritFrom 'docker'
                 }
             }
             steps{
