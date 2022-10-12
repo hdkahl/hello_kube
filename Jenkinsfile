@@ -1,7 +1,7 @@
 pipeline {
   agent {
     kubernetes {
-      inheritFrom 'agent-template'
+      inheritFrom 'gcc'
     }
   }
   stages {
